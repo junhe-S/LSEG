@@ -113,9 +113,9 @@ with sqlite3.connect('../../database.sqlite') as conn:
 
 ![image1](./assets/image1.png)
 
-#### Direct RDP APIs call with Python/requests - Historical Pricing Interday Data
+## Historical Pricing Interday Data
 
-The Historical Pricing Interday Data requested via syntax in this [official documentation](https://github.com/LSEG-API-Samples/Example.DataLibrary.Python.RequestsComparison/blob/main/Article.md).
+The Historical Pricing Interday Data requested via Direct RDP APIs call with Python/requests in this [official documentation](https://github.com/LSEG-API-Samples/Example.DataLibrary.Python.RequestsComparison/blob/main/Article.md).
 
 ```python
 # https://api.refinitiv.com/data/historical-pricing/v1/views/interday-summaries/{{universe}}
@@ -138,6 +138,18 @@ try:
 except requests.exceptions.RequestException as e:
     print(f'RDP historical-pricing request exception: {e}')
 ```
+
+## Sample Price Data
+
+The table below shows a preview of monthly price records. Each row corresponds to one company-month observation.
+
+| OAPermID   | RIC  | CommonName  | DATE       | OPEN_PRC | LOW_1   | TRDPRC_1 | HIGH_1 | ACVOL_UNS   |
+| ---------- | ---- | ----------- | ---------- | -------- | ------- | -------- | ------ | ----------- |
+| 4298042021 | IVZ  | Invesco Ltd | 2026-03-31 | 25.50    | 22.4100 | 23.20    | 26.41  | 105667451.0 |
+| 4298042021 | IVZ  | Invesco Ltd | 2026-02-28 | 27.16    | 24.9150 | 26.26    | 27.79  | 110697940.0 |
+| 4298042021 | IVZ  | Invesco Ltd | 2026-01-31 | 26.43    | 26.3300 | 27.29    | 29.61  | 128231099.0 |
+| 4298042021 | IVZ  | Invesco Ltd | 2025-12-31 | 24.27    | 23.9736 | 26.27    | 27.48  | 118235446.0 |
+| 4298042021 | IVZ  | Invesco Ltd | 2025-11-30 | 23.68    | 22.1000 | 24.45    | 24.79  | 72615149.0  |
 
 ---
 
