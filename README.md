@@ -113,6 +113,10 @@ with sqlite3.connect('../../database.sqlite') as conn:
     df = pd.read_sql(query, conn)
 ```
 
+The Trend of Live Stocks:
+
+![download](./assets/download-4792507.png)
+
 ---
 
 ## Usage
