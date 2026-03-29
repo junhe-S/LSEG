@@ -129,9 +129,7 @@ payload = {'interval': 'P1W',
 try:
     response = requests.get(
                             url=url,
-                            headers={
-                                'Authorization': f'Bearer {access_token}'
-                            }, 
+                            headers={'Authorization': f'Bearer {access_token}'}, 
                             params=payload,
                             verify=True,
                             allow_redirects=False
