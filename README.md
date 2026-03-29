@@ -82,7 +82,7 @@ The following fields indicate the number of instruments of each type associated 
 
 ## Coverage
 
-The database covers **113,200** **listed and delisted** companies in LSEG, where **97,341** firms have data of stock returns.
+The database covers **113,200** **listed and delisted** companies in LSEG, where **97,341** firms have stock returns.
 
 The following query was used to extract the core company universe from the database:
 
