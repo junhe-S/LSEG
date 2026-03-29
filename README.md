@@ -118,8 +118,7 @@ with sqlite3.connect('../../database.sqlite') as conn:
 The Historical Pricing Interday Data requested via Direct RDP APIs call with Python/requests in this [official documentation](https://github.com/LSEG-API-Samples/Example.DataLibrary.Python.RequestsComparison/blob/main/Article.md).
 
 ```python
-# https://api.refinitiv.com/data/historical-pricing/v1/views/interday-summaries/{{universe}}
-historical_pricing_url = f'{RDP_HOST}/data/historical-pricing/v1/views/interday-summaries/{universe}'
+url = f'https://api.refinitiv.com/data/historical-pricing/v1/views/interday-summaries/{universe}'
 
 payload = {'interval': 'P1W', 
             'count':15,
@@ -128,13 +127,15 @@ payload = {'interval': 'P1W',
             'end':'2025-02-10'}
 
 try:
-    response = requests.get(url= historical_pricing_url,
-                            headers= {
+    response = requests.get(
+      											url=url,
+                            headers={
                                 'Authorization': f'Bearer {access_token}'
                             }, 
-                            params= payload,
+                            params=payload,
                             verify=True,
-                                allow_redirects=False)
+                            allow_redirects=False
+                           )
 except requests.exceptions.RequestException as e:
     print(f'RDP historical-pricing request exception: {e}')
 ```
