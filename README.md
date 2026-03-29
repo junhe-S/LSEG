@@ -118,7 +118,7 @@ with sqlite3.connect('../../database.sqlite') as conn:
 The Historical Pricing Interday Data requested via Direct RDP APIs in this [official documentation](https://github.com/LSEG-API-Samples/Example.DataLibrary.Python.RequestsComparison/blob/main/Article.md).
 
 ```python
-url = f'https://api.refinitiv.com/data/historical-pricing/v1/views/interday-summaries/{universe}'
+url = f'https://api.refinitiv.com/data/historical-pricing/v1/views/interday-summaries/{PrimaryRIC}'
 
 payload = {'interval': 'P1W', 
             'count':15,
