@@ -80,9 +80,35 @@ The following fields indicate the number of instruments of each type associated 
 
 ---
 
-## Coverage
+## Coverage [RDP APIs](https://github.com/LSEG-API-Samples/Example.DataLibrary.Python.RequestsComparison/blob/main/Article.md)
 
 The database covers **113,200** **listed and delisted** companies in LSEG, where **97,341** (**80,410**) firms have valid stock observations (stock trading data). PS: some equities only have bid-ask quotes but trading data.
+
+#### Direct RDP APIs call with Python/requests - Historical Pricing Interday Data
+
+The Historical Pricing Interday Data URL endpoint is **/data/historical-pricing/v1/views/interday-summaries/{{universe}}** URL. An application can send the HTTP request message to this endpoint. Example Code in Python.
+
+```python
+# https://api.refinitiv.com/data/historical-pricing/v1/views/interday-summaries/{{universe}}
+historical_pricing_url = f'{RDP_HOST}/data/historical-pricing/v1/views/interday-summaries/{universe}'
+
+payload = {'interval': 'P1M', 
+            'count':15,
+            'fields':'BID,ASK,OPEN_PRC,HIGH_1,LOW_1,TRDPRC_1,NUM_MOVES,TRNOVR_UNS',
+            'start':'2025-01-01',
+            'end':'2025-02-10'}
+
+try:
+    response = requests.get(url= historical_pricing_url,
+                            headers= {
+                                'Authorization': f'Bearer {access_token}'
+                            }, 
+                            params= payload,
+                            verify=True,
+                                allow_redirects=False)
+except requests.exceptions.RequestException as e:
+    print(f'RDP historical-pricing request exception: {e}')
+```
 
 The following query was used to extract the core company universe from the database:
 
