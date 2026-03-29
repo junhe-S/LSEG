@@ -80,6 +80,41 @@ The following fields indicate the number of instruments of each type associated 
 
 ---
 
+## Coverage
+
+The database covers **113,200** **listed and delisted** companies in LSEG, where **97,341** firms have data of stock returns.
+
+The following query was used to extract the core company universe from the database:
+
+```python
+import sqlite3
+import pandas as pd
+
+query = """
+    SELECT OAPermID, PrimaryRIC, CommonName, OrganisationStatus, RCSOrganisationSubTypeLeaf, Trbc2012, RCSCountryHeadquartersLeaf
+    FROM tr_company
+    WHERE OrganisationStatus IN ('Delisted', 'Listed')
+      AND NOT (
+          RCSOrganisationSubTypeLeaf LIKE '%Government%'
+          OR RCSOrganisationSubTypeLeaf LIKE '%Bank%'
+          OR RCSOrganisationSubTypeLeaf LIKE '%Organization%'
+          OR RCSOrganisationSubTypeLeaf LIKE '%Investment%'
+          OR RCSOrganisationSubTypeLeaf LIKE '%REIT%'
+          OR RCSOrganisationSubTypeLeaf LIKE '%University%'
+          OR RCSOrganisationSubTypeLeaf LIKE '%Agency%'
+          OR RCSOrganisationSubTypeLeaf LIKE '%Unknown%'
+          OR RCSOrganisationSubTypeLeaf LIKE '%Charity%'
+          OR RCSOrganisationSubTypeLeaf LIKE '%Vehicle%'
+      )
+      AND DTSimpleType IN ('Private Company', 'Public Company')
+"""
+
+with sqlite3.connect('../../database.sqlite') as conn:
+    df = pd.read_sql(query, conn)
+```
+
+---
+
 ## Usage
 
 This database is intended to be used as a **search and crosswalk table**. A typical use case would be:
