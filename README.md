@@ -20,7 +20,6 @@ The table below describes all available fields.
 |---|---|
 | **OAPermID** | Open PermID — LSEG's permanent and universal entity identifier. Resolvable via [permid.org](https://permid.org) |
 | **Orgid** | LSEG internal organisation identifier |
-| **LEI** | Legal Entity Identifier — legal entities participating in financial transactions |
 | **PrimaryRIC** | Primary Reuters Instrument Code — the main instrument-level code for primary market |
 
 ### Company Information
