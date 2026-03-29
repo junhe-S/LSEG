@@ -115,7 +115,7 @@ with sqlite3.connect('../../database.sqlite') as conn:
 
 The Trend of Live Stocks:
 
-![download](./assets/download-4792507.png)
+![image1](./assets/image1.png)
 
 ---
 
