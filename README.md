@@ -18,7 +18,7 @@ The table below describes all available fields.
 
 | Variable | Description |
 |---|---|
-| **OAPermID** | Open PermID — LSEG's permanent and universal entity identifier. Resolvable via [permid.org](https://permid.org) |
+| **OAPermID** | LSEG's permanent and universal entity identifier. Resolvable via [permid.org](https://permid.org) |
 | **Orgid** | LSEG internal organisation identifier |
 | **PrimaryRIC** | Primary Reuters Instrument Code — the main instrument-level code for primary market |
 
