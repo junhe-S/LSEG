@@ -12,16 +12,16 @@ The database offers a structured overview of companies available in LSEG, includ
 
 ## Data Description
 
-Each record in the database represents a single company/organisation entry. The table below describes all available fields.
+The table below describes all available fields.
 
 ### Identifiers
 
 | Variable | Description |
 |---|---|
-| **OAPermID** | Open PermID — LSEG's permanent, unique, and universal entity identifier. Stable across corporate actions. Resolvable via [permid.org](https://permid.org) |
+| **OAPermID** | Open PermID — LSEG's permanent, unique, and universal entity identifier. Resolvable via [permid.org](https://permid.org) |
 | **Orgid** | LSEG internal organisation identifier |
-| **LEI** | Legal Entity Identifier — global standard identifier for legal entities participating in financial transactions |
-| **PrimaryRIC** | Primary Reuters Instrument Code — the main instrument-level code used for market data retrieval in LSEG Workspace / Eikon |
+| **LEI** | Legal Entity Identifier — legal entities participating in financial transactions |
+| **PrimaryRIC** | Primary Reuters Instrument Code — the main instrument-level code for primary market |
 
 ### Company Information
 
@@ -83,13 +83,212 @@ The following fields indicate the number of instruments of each type associated 
 
 The table below shows a preview of the first five records in the database.
 
-| OAPermID | Orgid | CommonName | Gics | PrimaryRIC | BondsCount | CdsCount | EquitiesCount | FundsCount | FuturesCount | LoanCount | MortgagesCount | OptionsCount | WarrantsCount | OwnershipExists | OrganisationStatus | MktCapCompanyUsd | FilingCountry | Trbc2012 | UltimateParentOrganisationOrgid | UltimateParentCompanyOAPermID | BusinessEntity | PI | DTSubjectName | UltimateParentOrganisationName | DTSimpleType | RCSOrganisationSubTypeLeaf | PEBackedStatus | LEI | RCSCountryHeadquartersLeaf | UIInstrumentsAvailable |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 4298040942 | 101073023 | Aruba, Government of | NaN | NaN | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | NaN | Unlisted | NaN | NaN | Government & Government Finance (NEC) | 101073023 | 4298041e+09 | ORGANISATION | 4228870 | Aruba, Government of | Aruba, Government of | Government | National Government | Never | 549300KCP2OHANSCXH27 | Aruba | Bonds |
-| 4298042021 | 105243423 | Invesco Ltd | Financials / Financial Services / Capital Markets / ... | IVZ | 0 | 0 | 63 | 0 | 0 | 0 | 0 | 22 | 6 | True | Listed | 1.069254e+10 | United States | Investment Management & Fund Operators (NEC) | 105243423 | 4298042e+09 | ORGANISATION | 10501174 | Invesco Ltd | Invesco Ltd | Public Company | Company | Never | ECPGFXU8A2SHKVVGJI15 | United States | Equities; Warrants; Options; Equity Holdings |
-| 4298041637 | 106100491 | SD Guthrie Bhd | Consumer Staples / Food, Beverage & Tobacco / Food ... | SDGU.KL | 2 | 0 | 6 | 0 | 0 | 0 | 0 | 0 | 9 | True | Listed | 1.021124e+10 | Malaysia | Starch, Vegetable Fat & Oil Manufacturing | 95790 | 4296552e+09 | ORGANISATION | 15522305 | SD Guthrie Bhd | Malaysia (Government) | Public Company | Company | Never | NaN | Malaysia | Equities; Bonds; Warrants; Equity Holdings |
-| 4298040855 | 105691022 | Zurn Elkay Water Solutions Corp | Industrials / Capital Goods / Building Products / Bu... | ZWS | 0 | 0 | 53 | 0 | 0 | 0 | 0 | 178 | 0 | NaN | Listed | 7.507571e+09 | United States | Construction Supplies & Fixtures (NEC) | 105691022 | 4298041e+09 | ORGANISATION | 12158396 | Zurn Elkay Water Solutions Corp | Zurn Elkay Water Solutions Corp | Public Company | Company | Formerly | 549300AM3633XDFU1Q85 | United States | Equities; Options |
-| 4298048507 | 108390356 | Jl Mag Rare-Earth Co Ltd | Industrials / Capital Goods / Electrical Equipment ... | 300748.SZ | 0 | 0 | 29 | 0 | 0 | 0 | 0 | 0 | 0 | NaN | Listed | 5.609531e+09 | China (Mainland) | Commodity Chemicals (NEC) | 105940024 | 5000912e+09 | ORGANISATION | 18610063 | Jl Mag Rare-Earth Co Ltd | Jiangxi Ruide Venture Capital Co Ltd | Public Company | Company | Never | 65560079RZSGJHK7CG66 | China (Mainland) | Equities |
+<div style="overflow-x: auto;">
+<table style="white-space: nowrap;">
+  <thead>
+    <tr>
+      <th>OAPermID</th>
+      <th>Orgid</th>
+      <th>CommonName</th>
+      <th>Gics</th>
+      <th>PrimaryRIC</th>
+      <th>BondsCount</th>
+      <th>CdsCount</th>
+      <th>EquitiesCount</th>
+      <th>FundsCount</th>
+      <th>FuturesCount</th>
+      <th>LoanCount</th>
+      <th>MortgagesCount</th>
+      <th>OptionsCount</th>
+      <th>WarrantsCount</th>
+      <th>OwnershipExists</th>
+      <th>OrganisationStatus</th>
+      <th>MktCapCompanyUsd</th>
+      <th>FilingCountry</th>
+      <th>Trbc2012</th>
+      <th>UltimateParentOrganisationOrgid</th>
+      <th>UltimateParentCompanyOAPermID</th>
+      <th>BusinessEntity</th>
+      <th>PI</th>
+      <th>DTSubjectName</th>
+      <th>UltimateParentOrganisationName</th>
+      <th>DTSimpleType</th>
+      <th>RCSOrganisationSubTypeLeaf</th>
+      <th>PEBackedStatus</th>
+      <th>LEI</th>
+      <th>RCSCountryHeadquartersLeaf</th>
+      <th>UIInstrumentsAvailable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4298040942</td>
+      <td>101073023</td>
+      <td>Aruba, Government of</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>Unlisted</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Government &amp; Government Finance (NEC)</td>
+      <td>101073023</td>
+      <td>4.298041e+09</td>
+      <td>ORGANISATION</td>
+      <td>4228870</td>
+      <td>Aruba, Government of</td>
+      <td>Aruba, Government of</td>
+      <td>Government</td>
+      <td>National Government</td>
+      <td>Never</td>
+      <td>549300KCP2OHANSCXH27</td>
+      <td>Aruba</td>
+      <td>Bonds</td>
+    </tr>
+    <tr>
+      <td>4298042021</td>
+      <td>105243423</td>
+      <td>Invesco Ltd</td>
+      <td>Financials/Financial Services/Capital Markets/...</td>
+      <td>IVZ</td>
+      <td>0</td>
+      <td>0</td>
+      <td>63</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>22</td>
+      <td>6</td>
+      <td>True</td>
+      <td>Listed</td>
+      <td>1.069254e+10</td>
+      <td>United States</td>
+      <td>Investment Management &amp; Fund Operators (NEC)</td>
+      <td>105243423</td>
+      <td>4.298042e+09</td>
+      <td>ORGANISATION</td>
+      <td>10501174</td>
+      <td>Invesco Ltd</td>
+      <td>Invesco Ltd</td>
+      <td>Public Company</td>
+      <td>Company</td>
+      <td>Never</td>
+      <td>ECPGFXU8A2SHKVVGJI15</td>
+      <td>United States</td>
+      <td>Equities; Warrants; Options; Equity Holdings</td>
+    </tr>
+    <tr>
+      <td>4298041637</td>
+      <td>106100491</td>
+      <td>SD Guthrie Bhd</td>
+      <td>Consumer Staples/Food, Beverage &amp; Tobacco/Food...</td>
+      <td>SDGU.KL</td>
+      <td>2</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>9</td>
+      <td>True</td>
+      <td>Listed</td>
+      <td>1.021124e+10</td>
+      <td>Malaysia</td>
+      <td>Starch, Vegetable Fat &amp; Oil Manufacturing</td>
+      <td>95790</td>
+      <td>4.296552e+09</td>
+      <td>ORGANISATION</td>
+      <td>15522305</td>
+      <td>SD Guthrie Bhd</td>
+      <td>Malaysia (Government)</td>
+      <td>Public Company</td>
+      <td>Company</td>
+      <td>Never</td>
+      <td>NaN</td>
+      <td>Malaysia</td>
+      <td>Equities; Bonds; Warrants; Equity Holdings</td>
+    </tr>
+    <tr>
+      <td>4298040855</td>
+      <td>105691022</td>
+      <td>Zurn Elkay Water Solutions Corp</td>
+      <td>Industrials/Capital Goods/Building Products/Bu...</td>
+      <td>ZWS</td>
+      <td>0</td>
+      <td>0</td>
+      <td>53</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>178</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>Listed</td>
+      <td>7.507571e+09</td>
+      <td>United States</td>
+      <td>Construction Supplies &amp; Fixtures (NEC)</td>
+      <td>105691022</td>
+      <td>4.298041e+09</td>
+      <td>ORGANISATION</td>
+      <td>12158396</td>
+      <td>Zurn Elkay Water Solutions Corp</td>
+      <td>Zurn Elkay Water Solutions Corp</td>
+      <td>Public Company</td>
+      <td>Company</td>
+      <td>Formerly</td>
+      <td>549300AM3633XDFU1Q85</td>
+      <td>United States</td>
+      <td>Equities; Options</td>
+    </tr>
+    <tr>
+      <td>4298048507</td>
+      <td>108390356</td>
+      <td>Jl Mag Rare-Earth Co Ltd</td>
+      <td>Industrials/Capital Goods/Electrical Equipment...</td>
+      <td>300748.SZ</td>
+      <td>0</td>
+      <td>0</td>
+      <td>29</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>Listed</td>
+      <td>5.609531e+09</td>
+      <td>China (Mainland)</td>
+      <td>Commodity Chemicals (NEC)</td>
+      <td>105940024</td>
+      <td>5.000912e+09</td>
+      <td>ORGANISATION</td>
+      <td>18610063</td>
+      <td>Jl Mag Rare-Earth Co Ltd</td>
+      <td>Jiangxi Ruide Venture Capital Co Ltd</td>
+      <td>Public Company</td>
+      <td>Company</td>
+      <td>Never</td>
+      <td>65560079RZSGJHK7CG66</td>
+      <td>China (Mainland)</td>
+      <td>Equities</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 ---
 
