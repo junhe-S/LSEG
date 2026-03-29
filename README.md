@@ -140,7 +140,7 @@ except requests.exceptions.RequestException as e:
 
 ### Sample Price Data
 
-The table below shows a preview of monthly price records. Each row corresponds to one company-month observation.
+The table below shows a preview of monthly price records.
 
 | OAPermID   | RIC  | CommonName  | DATE_TIME  | OPEN_PRC | LOW_1   | TRDPRC_1 | HIGH_1 | ACVOL_UNS   |
 | ---------- | ---- | ----------- | ---------- | -------- | ------- | -------- | ------ | ----------- |
