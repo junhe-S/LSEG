@@ -111,6 +111,8 @@ with sqlite3.connect('../../database.sqlite') as conn:
     df = pd.read_sql(query, conn)
 ```
 
+![image1](./assets/image1.png)
+
 #### Direct RDP APIs call with Python/requests - Historical Pricing Interday Data
 
 The Historical Pricing Interday Data requested via syntax in this [official documentation](https://github.com/LSEG-API-Samples/Example.DataLibrary.Python.RequestsComparison/blob/main/Article.md).
@@ -136,8 +138,6 @@ try:
 except requests.exceptions.RequestException as e:
     print(f'RDP historical-pricing request exception: {e}')
 ```
-
-![image1](./assets/image1.png)
 
 ---
 
