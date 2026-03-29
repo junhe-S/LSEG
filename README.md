@@ -113,7 +113,7 @@ with sqlite3.connect('../../database.sqlite') as conn:
 
 #### Direct RDP APIs call with Python/requests - Historical Pricing Interday Data
 
-The Historical Pricing Interday Data URL endpoint is **/data/historical-pricing/v1/views/interday-summaries/{{universe}}** URL. An application can send the HTTP request message to this endpoint. Please refer to [official documentation](https://github.com/LSEG-API-Samples/Example.DataLibrary.Python.RequestsComparison/blob/main/Article.md).
+The Historical Pricing Interday Data requested via syntax in this [official documentation](https://github.com/LSEG-API-Samples/Example.DataLibrary.Python.RequestsComparison/blob/main/Article.md).
 
 ```python
 # https://api.refinitiv.com/data/historical-pricing/v1/views/interday-summaries/{{universe}}
