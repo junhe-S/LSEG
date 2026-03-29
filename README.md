@@ -143,7 +143,7 @@ except requests.exceptions.RequestException as e:
 
 The table below shows a preview of monthly price records. Each row corresponds to one company-month observation.
 
-| OAPermID   | RIC  | CommonName  | DATETIME   | OPEN_PRC | LOW_1   | TRDPRC_1 | HIGH_1 | ACVOL_UNS   |
+| OAPermID   | RIC  | CommonName  | DATE_TIME  | OPEN_PRC | LOW_1   | TRDPRC_1 | HIGH_1 | ACVOL_UNS   |
 | ---------- | ---- | ----------- | ---------- | -------- | ------- | -------- | ------ | ----------- |
 | 4298042021 | IVZ  | Invesco Ltd | 2026-03-31 | 25.50    | 22.4100 | 23.20    | 26.41  | 105667451.0 |
 | 4298042021 | IVZ  | Invesco Ltd | 2026-02-28 | 27.16    | 24.9150 | 26.26    | 27.79  | 110697940.0 |
