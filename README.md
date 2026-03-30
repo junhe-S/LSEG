@@ -26,28 +26,9 @@ The table below describes all available fields.
 
 ## Coverage
 
-The database covers **113,200** **listed and delisted** companies in LSEG, where **97,341** (**95,916**) firms have valid stock data (stock trading data). PS: some equities only have bid-ask quotes but trading data. The following query was used to extract the core company universe from the database:
-
-```python
-import sqlite3
-import pandas as pd
-
-query = """
-    SELECT OAPermID, PrimaryRIC, CommonName, OrganisationStatus, RCSOrganisationSubTypeLeaf, Trbc2012, RCSCountryHeadquartersLeaf
-    FROM tr_company
-    WHERE OrganisationStatus IN ('Delisted', 'Listed')
-      AND DTSimpleType IN ('Private Company', 'Public Company')
-"""
-
-with sqlite3.connect('../../database.sqlite') as conn:
-    df = pd.read_sql(query, conn)
-```
-
-However, this classification will mis-classify companys into Bank, such as `Alibaba Health Information Technology Ltd`. 
+The database covers **113,200** **listed and delisted** companies in LSEG, where **97,341** (**95,916**) firms have valid stock data (stock trading data). However, LSEG classification classify companys with mistakes. For example, `Alibaba Health Information Technology Ltd` is classfied as bank/financial institution.
 
 ![image2](./assets/image2.png)
-
-
 
 ## Historical Pricing Interday Data
 
