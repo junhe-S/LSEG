@@ -22,7 +22,7 @@ The database covers **113,200** **listed and delisted** companies in LSEG, where
 
 ![image2](./assets/image3.png)
 
-However, funds report in different frequency.
+However, lipper funds are available from **December-2006** and funds report in different frequency. 
 
 ![image2](./assets/image4.png)
 
