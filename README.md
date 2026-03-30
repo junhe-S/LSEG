@@ -78,13 +78,13 @@ except requests.exceptions.RequestException as e:
 
 The table below shows a preview of monthly price records.
 
-| OAPermID   | RIC  | CommonName  | DATE_TIME  | OPEN_PRC | LOW_1   | TRDPRC_1 | HIGH_1 | ACVOL_UNS   |
-| ---------- | ---- | ----------- | ---------- | -------- | ------- | -------- | ------ | ----------- |
-| 4298042021 | IVZ  | Invesco Ltd | 2026/03/31 | 25.50    | 22.4100 | 23.20    | 26.41  | 105667451.0 |
-| 4298042021 | IVZ  | Invesco Ltd | 2026/02/28 | 27.16    | 24.9150 | 26.26    | 27.79  | 110697940.0 |
-| 4298042021 | IVZ  | Invesco Ltd | 2026/01/31 | 26.43    | 26.3300 | 27.29    | 29.61  | 128231099.0 |
-| 4298042021 | IVZ  | Invesco Ltd | 2025/12/31 | 24.27    | 23.9736 | 26.27    | 27.48  | 118235446.0 |
-| 4298042021 | IVZ  | Invesco Ltd | 2025/11/30 | 23.68    | 22.1000 | 24.45    | 24.79  | 72615149.0  |
+| OAPermID   | RIC  | CommonName  | DATE_TIME  | TRDPRC_1 | ACVOL_UNS   |
+| ---------- | ---- | ----------- | ---------- | -------- | ----------- |
+| 4298042021 | IVZ  | Invesco Ltd | 2026/03/31 | 23.20    | 105667451.0 |
+| 4298042021 | IVZ  | Invesco Ltd | 2026/02/28 | 26.26    | 110697940.0 |
+| 4298042021 | IVZ  | Invesco Ltd | 2026/01/31 | 27.29    | 128231099.0 |
+| 4298042021 | IVZ  | Invesco Ltd | 2025/12/31 | 26.27    | 118235446.0 |
+| 4298042021 | IVZ  | Invesco Ltd | 2025/11/30 | 24.45    | 72615149.0  |
 
 ---
 
