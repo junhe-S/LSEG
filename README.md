@@ -111,7 +111,11 @@ with sqlite3.connect('../../database.sqlite') as conn:
     df = pd.read_sql(query, conn)
 ```
 
+However, this classification will mis-classify companys into Bank, such as `Alibaba Health Information Technology Ltd`. 
+
 ![image2](./assets/image2.png)
+
+
 
 ## Historical Pricing Interday Data
 
