@@ -51,7 +51,7 @@ However, this classification will mis-classify companys into Bank, such as `Alib
 
 ## Historical Pricing Interday Data
 
-The Historical Pricing Interday Data requested via Direct RDP APIs in this [official documentation](https://github.com/LSEG-API-Samples/Example.DataLibrary.Python.RequestsComparison/blob/main/Article.md).
+The Historical Pricing Interday Data requested via APIs in this official [Documentation](https://github.com/LSEG-API-Samples/Example.DataLibrary.Python.RequestsComparison/blob/main/Article.md) and [Reference](https://developers.lseg.com/en/article-catalog/article/the-data-library-for-python-quick-reference-guide-access-layer)
 
 ```python
 url = f'https://api.refinitiv.com/data/historical-pricing/v1/views/interday-summaries/{PrimaryRIC}'
