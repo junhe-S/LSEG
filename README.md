@@ -14,6 +14,8 @@ The database covers **113,200** **listed and delisted** companies in LSEG, where
 
 ![image2](./assets/image2.png)
 
+Since we have collected OAPermID or RIC for each listed and delisted companies, we can download firms' ownership by referring to this [documentation](https://developers.lseg.com/en/article-catalog/article/the-data-library-for-python-quick-reference-guide-access-layer).
+
 ## Overview of LSEG Lipper Fund [Database](https://huggingface.co/datasets/JunHe-S/LSEG/tree/main)
 
 **Between 1900 and 2024, the dataset encompasses 943,096 funds across a broad range of investment vehicles.** The vast majority are Mutual Funds, which account for 750,218 entries, followed by Insurance Funds at 60,677 and Pension Funds at 50,877. Exchange Traded Funds (ETFs) number 43,249, while Hedge Funds make up 20,662 of the total. 
