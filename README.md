@@ -14,9 +14,9 @@ The database covers **113,200** **listed and delisted** companies in LSEG, where
 
 ![image2](./assets/image2.png)
 
-Since we have collected OAPermID or RIC for each listed and delisted companies, we can download firms' global ownership, which starts from 1997, by referring to this [documentation](https://developers.lseg.com/en/article-catalog/article/the-data-library-for-python-quick-reference-guide-access-layer). Different from mutual fund or 13f database, LSEG global ownership contains mutual funds, pension funds, insurance funds, incorporation, insiders and other strategic entities.
+Since we have collected `OAPermID` or `RIC` for each listed and delisted companies, we can download firms' global ownership, which starts from 1997, by referring to this [documentation](https://developers.lseg.com/en/article-catalog/article/the-data-library-for-python-quick-reference-guide-access-layer). Different from mutual fund or 13f database, LSEG global ownership contains mutual funds, pension funds, insurance funds, incorporation, insiders and other strategic entities.
 
-Notice that, LSEG provided all of data on WRDS, which requires extra subscription. Meanwhile, WRDS-13F, which mainly focus on the US market, should provide more data since it starts from 1978. Recently, [Which Investors Drive Anomaly Returns and How? (2026, JFE)](https://www.sciencedirect.com/science/article/pii/S0304405X26000280) applies this in their paper.
+**Notice**: LSEG provided all of data on WRDS, which requires extra subscription. Meanwhile, WRDS-13F, which mainly focus on the US market, should provide more data since it starts from 1978. Recently, [Which Investors Drive Anomaly Returns and How? (2026, JFE)](https://www.sciencedirect.com/science/article/pii/S0304405X26000280) applies this in their paper.
 
 
 
