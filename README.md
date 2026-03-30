@@ -42,6 +42,8 @@ However, lipper funds are available from **December-2006** and funds report in d
 
 ![image2](./assets/image4.png)
 
+## Overview of LSEG EMAXX / Bond Mutual Fund [Database](https://huggingface.co/datasets/JunHe-S/LSEG/tree/main)
+
 Since many institutions have no budget for `emaxx` database,  Lipper Fund is a good alternative database as it provides info of `bonds` held by these institutions. Although LESG provides snap of bond ownership, it is only front-edge data and can not be extracted from API. However, if you visit [Emaxx Columbia](https://www.columbia.edu/acis/eds/holdings/1013/www1-data.pl@C1013.html), you will find that many info before 2007 is missing if we utilite data from lipper fund only. 
 
 Alternatively, `MorningStar` also provides information from bond mutual fund. In paper, [Bond Price Fragility and the Structure of the Mutual Fund Industry](https://academic.oup.com/rfs/article/37/7/2063/7633431?login=false), they mainly use taxable fixed-income mutual funds as bond mutual fund while paper, [Bond Funds and Credit Risk](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3490683) define bond mutual funds in different way. Both papers mainly focus on a total of 1,405 funds.
