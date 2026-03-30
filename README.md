@@ -82,7 +82,7 @@ The following fields indicate the number of instruments of each type associated 
 
 ## Coverage
 
-The database covers **113,200** **listed and delisted** companies in LSEG, where **97,341** (**95,916**) firms have valid stock observations (stock trading data). PS: some equities only have bid-ask quotes but trading data. The following query was used to extract the core company universe from the database:
+The database covers **113,200** **listed and delisted** companies in LSEG, where **97,341** (**95,916**) firms have valid stock data (stock trading data). PS: some equities only have bid-ask quotes but trading data. The following query was used to extract the core company universe from the database:
 
 ```python
 import sqlite3
