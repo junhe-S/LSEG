@@ -58,7 +58,75 @@ Although it is provided in WRDS, many institutions do not have enough budget for
 
 Although it is provided in WRDS, many institutions do not have enough budget for it (including mine). Alternatively, you can inspect some information from LSEG, which provides up to 3-month Trace data and all quote information.
 
+```python
+import datetime
+import refinitiv.data as rd   # pip install refinitiv.data
+rd.open_session()
 
+df = rd.get_history(
+    universe=["67066GAE4="], # NVDA 3.200 16-SEP-2026 '26
+    fields=[
+            "BID_YIELD",  #Bid Yield,
+            "BID",        #Bid,
+            "ASK_YIELD",  #Ask Yield,
+            "ASK",        #Ask,
+            "MID_PRICE",  #Mid Price,
+            "OAS",        #Option Adjusted Spread,
+            "SWAP_SPRD",  #Swap Spread,
+            "AST_SWPSPD", #Asset Swap Spread,
+            "BMK_SPD",    #Benchmark Spread,
+            "ISMA_B_YLD", #ISMA Bid Yield,
+            "ISMA_A_YLD", #ISMA Ask Yield,
+            "BPV",        #Basis Point Value,
+            "CDS_BASIS",  #CDS Basis,
+            "REAL_YLDA",  #Real Yield Ask,
+            "REAL_YLDB",  #Real Yield Bid,
+            "ZSPREAD",    #Z Spread,
+            "DURATION",   #Duration,
+            "CONVEXITY",  #Convexity,
+            "OAS_BID",    #Option Adjusted Spread Bid,
+            "TRTN_PRICE", #Daily Total Return,
+            "MID_YLD_1",  #Mid Yield,
+            "INT_BASIS",  #Spread between Interpolated CDS Spread and Z Spread,
+            "INT_CDS",    #Interpolated CDS Spread,
+            "MOD_DURTN",  #Modified Duration,
+            "SWP_POINT",  #Swap Point,
+            "YLDTOMAT",   #Yield to Maturity,
+            "SWAP_SPRDB", #Swap Spread Bid,
+            "YLDWST",     #Yield To Worst,
+            "DSC_MARGIN", #Discount Margin,
+            "ASP1M",      #1M Basis Asset Swap Spread,
+            "ESPRD_TSRY", #Spread to Treasury,
+            "CLEAN_PRC",  #Clean Price,
+            "DIRTY_ASK",  #Dirty Ask,
+            "DIRTY_BID",  #Dirty Bid,
+            "DIRTY_MID",  #Dirty Mid,
+            "CLN_PRC_A",  #Clean Price Ask,
+            "CLN_PRC_M",  #Clean Price Mid,
+            "MAC_DURTN",  #Maculay Duration,
+            "TED_SPREAD", #TED Spread,
+            "OIS_SPREAD", #OIS Spread,
+            "DSCMRG_TW",  #Discount Margin to Worst,
+            "EVAL_ACINT", #Evaluated Accrued Interest,
+            "EVAL_ASK",   #Evaluated Ask Price,
+            "EVAL_BID",   #Evaluated Bid Price,
+            "EVAL_MID",   #Evaluated Mid Price,
+            "EVAL_SCORE", #Evaluation Score,
+            "ACCR_INT",   #Accrued Interest,
+            "REDEM_DATE", #Redemption Date - yyyymmdd,
+            "CNVXWST_SB", #Convexity to Worst in Semi-Annual Terms,
+            "DURTN_TW",   #Macaulay Duration to Worst,
+            "MDTNWST_SB", #Modified Duration to Worst in Semi-Annual Terms,
+            "YLDTOMATSB", #Semi-Annual Yield,
+            "YLDWST_SB",  #Yield to Worst in Semi-Annual Terms,
+            "SPDTOWST",   #Spread to Worst,
+            "AVG_LIFE",   #Average Life,    
+    ],
+    interval="1D", # intervals are: ['tick', 'tas', 'taq', 'minute', '1min', '5min', '10min', '30min', '60min', 'hourly', '1h', 'daily', '1d', '1D', '7D', '7d', 'weekly', '1W', 'monthly', '1M', 'quarterly', '3M', '6M', 'yearly', '12M', '1Y']
+    start="2016-10-01",
+    end="2024-10-23")
+
+```
 
 ## Contact
 
