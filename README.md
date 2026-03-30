@@ -111,6 +111,8 @@ with sqlite3.connect('../../database.sqlite') as conn:
     df = pd.read_sql(query, conn)
 ```
 
+![image1](./assets/image1.png)
+
 ## Historical Pricing Interday Data
 
 The Historical Pricing Interday Data requested via Direct RDP APIs in this [official documentation](https://github.com/LSEG-API-Samples/Example.DataLibrary.Python.RequestsComparison/blob/main/Article.md).
