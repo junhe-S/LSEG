@@ -82,7 +82,7 @@ The following fields indicate the number of instruments of each type associated 
 
 ## Coverage
 
-The database covers **113,200** **listed and delisted** companies in LSEG, where **97,341** (**80,410**) firms have valid stock observations (stock trading data). PS: some equities only have bid-ask quotes but trading data. The following query was used to extract the core company universe from the database:
+The database covers **113,200** **listed and delisted** companies in LSEG, where **97,341** (**95,916**) firms have valid stock observations (stock trading data). PS: some equities only have bid-ask quotes but trading data. The following query was used to extract the core company universe from the database:
 
 ```python
 import sqlite3
@@ -120,7 +120,7 @@ The Historical Pricing Interday Data requested via Direct RDP APIs in this [offi
 ```python
 url = f'https://api.refinitiv.com/data/historical-pricing/v1/views/interday-summaries/{PrimaryRIC}'
 
-payload = {'interval': 'P1W', 
+payload = {'interval': 'P1M', 
             'count':15,
             'fields':'BID,ASK,OPEN_PRC,HIGH_1,LOW_1,TRDPRC_1,NUM_MOVES,TRNOVR_UNS',
             'start':'2025-01-01',
