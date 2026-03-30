@@ -4,7 +4,7 @@ This repository provides a search database for quick lookup of companies covered
 
 ---
 
-## Overview of Companies & Issuers [Database](https://huggingface.co/datasets/yourname/LSEG)
+## Overview of Companies & Issuers [Database](https://huggingface.co/datasets/JunHe-S/LSEG)
 
 The database offers a structured overview of **27,327,868** companies available in LSEG, including their key identifiers, organisational metadata, instrument counts, and market information. It is intended to serve as a reference and crosswalk table for researchers and practitioners who need to quickly locate a company's LSEG identifiers before conducting further data retrieval or analysis. 
 
