@@ -111,7 +111,7 @@ with sqlite3.connect('../../database.sqlite') as conn:
     df = pd.read_sql(query, conn)
 ```
 
-![image1](./assets/image1.png)
+![image2](./assets/image2.png)
 
 ## Historical Pricing Interday Data
 
