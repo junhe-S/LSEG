@@ -14,7 +14,7 @@ The database covers **113,200** **listed and delisted** companies in LSEG, where
 
 ![image2](./assets/image2.png)
 
-Since we have collected OAPermID or RIC for each listed and delisted companies, we can download firms' ownership by referring to this [documentation](https://developers.lseg.com/en/article-catalog/article/the-data-library-for-python-quick-reference-guide-access-layer).
+Since we have collected OAPermID or RIC for each listed and delisted companies, we can download firms' global ownership, which starts from 1997, by referring to this [documentation](https://developers.lseg.com/en/article-catalog/article/the-data-library-for-python-quick-reference-guide-access-layer). Different from mutual fund or 13f database, LSEG global ownership contains mutual funds, pension funds, insurance funds, incorporation, insiders and other strategic entities with application in paper, [Which investors drive anomaly returns and how? (2026, JFE)](https://www.sciencedirect.com/science/article/pii/S0304405X26000280).
 
 ## Overview of LSEG Lipper Fund [Database](https://huggingface.co/datasets/JunHe-S/LSEG/tree/main)
 
