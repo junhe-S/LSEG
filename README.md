@@ -16,7 +16,9 @@ The database covers **113,200** **listed and delisted** companies in LSEG, where
 
 Since we have collected OAPermID or RIC for each listed and delisted companies, we can download firms' global ownership, which starts from 1997, by referring to this [documentation](https://developers.lseg.com/en/article-catalog/article/the-data-library-for-python-quick-reference-guide-access-layer). Different from mutual fund or 13f database, LSEG global ownership contains mutual funds, pension funds, insurance funds, incorporation, insiders and other strategic entities.
 
-Notice that, LSEG provided all of data on WRDS, which requires extra subscription. Meanwhile, WRDS-13F, which mainly focus on the US market, should provide more data since it starts from 1978. Recently, [Which investors drive anomaly returns and how? (2026, JFE)](https://www.sciencedirect.com/science/article/pii/S0304405X26000280) applies this in their paper.
+Notice that, LSEG provided all of data on WRDS, which requires extra subscription. Meanwhile, WRDS-13F, which mainly focus on the US market, should provide more data since it starts from 1978. Recently, [Which Investors Drive Anomaly Returns and How? (2026, JFE)](https://www.sciencedirect.com/science/article/pii/S0304405X26000280) applies this in their paper.
+
+
 
 ## Overview of LSEG Lipper Fund [Database](https://huggingface.co/datasets/JunHe-S/LSEG/tree/main)
 
@@ -28,7 +30,17 @@ However, lipper funds are available from **December-2006** and funds report in d
 
 ![image2](./assets/image4.png)
 
----
+## Overview of LSEG SDC [Database](https://huggingface.co/datasets/JunHe-S/LSEG/tree/main)
+
+Although it is provided in WRDS, many institutions do not have enough budget for it (including mine). Alternatively, you can download it from SEC platform on LSEG Workspace ( ... maybe need subscription). SDC provides databases including M&A, Bonds Issuance, (syndicated) Loans and IPO, which are popular in Academia. The information is almost the same as ones In `search` section but SDC provides more detailed records.
+
+**Notice**: Loan Dealscan Database on WRDS can connect with LSEG directly via `PermID` code and I notice that many researchers ignore this fact. 
+
+## Overview of LSEG Bond/Trace [Database](https://huggingface.co/datasets/JunHe-S/LSEG/tree/main)
+
+Although it is provided in WRDS, many institutions do not have enough budget for it (including mine). Alternatively, you can inspect some information from LSEG, which provides up to 3-month Trace data and all quote information.
+
+
 
 ## Contact
 
