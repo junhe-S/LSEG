@@ -130,7 +130,7 @@ While SDC data is accessible through WRDS, many institutions — including mine 
 
 > **Note:** The Loan DealScan database on WRDS can be linked directly to LSEG data via the `PermID` identifier — a connection that is frequently overlooked in the literature.
 
-## Overview of LSEG Bond/Trace [Database](https://huggingface.co/datasets/JunHe-S/LSEG/tree/main)
+## Overview of LSEG Bond Quotes [Database](https://huggingface.co/datasets/JunHe-S/LSEG/tree/main)
 
 Although it is provided in WRDS, many institutions do not have enough budget for it (including mine). Alternatively, you can inspect some information from LSEG, which provides up to 3-month Trace data and all quote information.
 
