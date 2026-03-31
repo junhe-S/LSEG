@@ -214,7 +214,7 @@ Since BoardEx has known coverage gaps, I refer readers to [**How Much Do Directo
 
 Similarly, by combining the LSEG Board database with BoardEx, I find cross-stock return predictability among firms connected through shared board members — suggesting that LSEG contains incremental information. 
 
-**WRDS Linking Table** 
+**WRDS Linking Table** [Database](https://huggingface.co/datasets/JunHe-S/LSEG/tree/main) ( ... updating)
 
 Although WRDS provides Linking Table between BoardEx and LSEG, there are maning unmatched observations.
 
