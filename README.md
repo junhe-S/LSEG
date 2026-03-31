@@ -100,35 +100,36 @@ con = duckdb.connect()
 df = con.execute(f"SELECT * FROM parquet_scan('{path}') LIMIT 10").df()
 ```
 
-## Overview of LSEG EMAXX / Bond Mutual Fund [Database](https://huggingface.co/datasets/JunHe-S/LSEG/tree/main)
-
-Since many institutions have no budget for `emaxx` database,  Lipper Fund is a good alternative database as it provides info of `bonds` held by these institutions. Although LESG provides snap of bond ownership, it is only front-edge data and can not be extracted from API. However, if you visit [Emaxx Columbia](https://www.columbia.edu/acis/eds/holdings/1013/www1-data.pl@C1013.html), you will find that many info before 2007 is missing if we utilite data from lipper fund only. 
-
-```python
-# Overview of Bonds included in Emaxx duing 2000-2024 (... matured before 2025)
-import duckdb
-from huggingface_hub import hf_hub_download
-
-# Download to local cache (only first time)
-# Save to a specific folder instead of default cache
-path = hf_hub_download(
-    repo_id="junhe-S/LSEG",
-    filename="emaxx.parquet",
-    repo_type="dataset",
-    local_dir="./data"          # saves to ./data/emaxx.parquet
-)
-# Query with DuckDB
-con = duckdb.connect()
-df = con.execute(f"SELECT * FROM parquet_scan('{path}') LIMIT 10").df()
-```
-
 Meanwhile, you can refer to [Fund Details API](https://github.com/edwinhu/workflows/blob/90a7dc1f8ca7b8fbff958350201c3ed7e8dd8782/skills/lseg-data/references/fund-details.md) via Request
 
-```
-GET /Apps/FundDetails/{version}/loadData?requests=DHOL~true~&s={LipperRIC}&lang=en-US
+```js
+// Run in browser console while logged into Workspace
+async function fetchFundDetails(lipperRic) {
+  const baseUrl = “https://workspace.refinitiv.com/Apps/FundDetails/1.10.457/loadData”;
+  const requests = [‘KEY’, ‘MD’, ‘BEN’, ‘PFM’, ‘TTH’, ‘FEE’, ‘INC’, ‘CLA’, ‘DHOL~true~’];
+  const result = { lipperRic, data: {} };
+
+  for (const req of requests) {
+    const url = `${baseUrl}?requests=${req}&s=${lipperRic}&srequired=${lipperRic}&lang=en-US`;
+    const response = await fetch(url, { credentials: “include” });
+    const json = await response.json();
+    result.data[req.replace(‘~true~’, ‘’)] = json.results?.[0] || json;
+  }
+
+  // Download as JSON
+  const blob = new Blob([JSON.stringify(result, null, 2)], { type: ‘application/json’ });
+  const a = document.createElement(‘a’);
+  a.href = URL.createObjectURL(blob);
+  a.download = `fund_data_${lipperRic}.json`;
+  a.click();
+  return result;
+}
+
+// Usage: fetchFundDetails(“LP40061149”);
 ```
 
 **Parameters:**
+
 - `requests=DHOL~true~` - Request derived holdings
 - `s` - Lipper RIC (e.g., `LP40061149`)
 - `lang` - Language code (e.g., `en-US`)
@@ -172,6 +173,28 @@ GET /Apps/FundDetails/{version}/loadData?requests=DHOL~true~&s={LipperRIC}&lang=
     }]
   }]
 }
+```
+
+## Overview of LSEG EMAXX / Bond Mutual Fund [Database](https://huggingface.co/datasets/JunHe-S/LSEG/tree/main)
+
+Since many institutions have no budget for `emaxx` database,  Lipper Fund is a good alternative database as it provides info of `bonds` held by these institutions. Although LESG provides snap of bond ownership, it is only front-edge data and can not be extracted from API. However, if you visit [Emaxx Columbia](https://www.columbia.edu/acis/eds/holdings/1013/www1-data.pl@C1013.html), you will find that many info before 2007 is missing if we utilite data from lipper fund only. 
+
+```python
+# Overview of Bonds included in Emaxx duing 2000-2024 (... matured before 2025)
+import duckdb
+from huggingface_hub import hf_hub_download
+
+# Download to local cache (only first time)
+# Save to a specific folder instead of default cache
+path = hf_hub_download(
+    repo_id="junhe-S/LSEG",
+    filename="emaxx.parquet",
+    repo_type="dataset",
+    local_dir="./data"          # saves to ./data/emaxx.parquet
+)
+# Query with DuckDB
+con = duckdb.connect()
+df = con.execute(f"SELECT * FROM parquet_scan('{path}') LIMIT 10").df()
 ```
 
 Alternatively, `MorningStar` also provides information from bond mutual fund. In paper, [Bond Price Fragility and the Structure of the Mutual Fund Industry](https://academic.oup.com/rfs/article/37/7/2063/7633431?login=false), they mainly use taxable fixed-income mutual funds as bond mutual fund while paper, [Bond Funds and Credit Risk](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3490683) define bond mutual funds in different way. Both papers mainly focus on a total of 1,405 funds.
