@@ -134,7 +134,7 @@ async function fetchFundDetails(lipperRic) {
 - `s` - Lipper RIC (e.g., `LP40061149`)
 - `lang` - Language code (e.g., `en-US`)
 
-### Response Structure
+**Response Structure**
 
 ```json
 {
