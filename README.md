@@ -126,7 +126,7 @@ con = duckdb.connect()
 df = con.execute(f"SELECT * FROM parquet_scan('{path}') LIMIT 10").df()
 ```
 
-Alternatively, `MorningStar` also provides information from bond mutual fund. In paper, [Bond Price Fragility and the Structure of the Mutual Fund Industry](https://academic.oup.com/rfs/article/37/7/2063/7633431?login=false), they mainly use taxable fixed-income mutual funds as bond mutual fund while paper, [Bond Funds and Credit Risk](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3490683) define bond mutual funds in different way. Both papers mainly focus on a total of 1,405 funds.
+`Morningstar` also provides holdings data for bond mutual funds. [Bond Price Fragility and the Structure of the Mutual Fund Industry](https://academic.oup.com/rfs/article/37/7/2063/7633431?login=false) defines bond mutual funds as taxable fixed-income mutual funds, while [Bond Funds and Credit Risk](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3490683) adopts a broader definition that captures a different cross-section of funds. Despite these definitional differences, both papers converge on a sample of approximately 1,405 funds.
 
 ## Overview of LSEG SDC [Youtube](https://www.youtube.com/watch?v=U1qXURAAHKE)
 
