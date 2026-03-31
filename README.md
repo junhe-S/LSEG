@@ -104,6 +104,24 @@ df = con.execute(f"SELECT * FROM parquet_scan('{path}') LIMIT 10").df()
 
 Since many institutions have no budget for `emaxx` database,  Lipper Fund is a good alternative database as it provides info of `bonds` held by these institutions. Although LESG provides snap of bond ownership, it is only front-edge data and can not be extracted from API. However, if you visit [Emaxx Columbia](https://www.columbia.edu/acis/eds/holdings/1013/www1-data.pl@C1013.html), you will find that many info before 2007 is missing if we utilite data from lipper fund only. 
 
+```python
+# Overview of Bonds included in Emaxx duing 2000-2024 (... matured before 2025)
+import duckdb
+from huggingface_hub import hf_hub_download
+
+# Download to local cache (only first time)
+# Save to a specific folder instead of default cache
+path = hf_hub_download(
+    repo_id="junhe-S/LSEG",
+    filename="emaxx.parquet",
+    repo_type="dataset",
+    local_dir="./data"          # saves to ./data/emaxx.parquet
+)
+# Query with DuckDB
+con = duckdb.connect()
+df = con.execute(f"SELECT * FROM parquet_scan('{path}') LIMIT 10").df()
+```
+
 Alternatively, `MorningStar` also provides information from bond mutual fund. In paper, [Bond Price Fragility and the Structure of the Mutual Fund Industry](https://academic.oup.com/rfs/article/37/7/2063/7633431?login=false), they mainly use taxable fixed-income mutual funds as bond mutual fund while paper, [Bond Funds and Credit Risk](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3490683) define bond mutual funds in different way. Both papers mainly focus on a total of 1,405 funds.
 
 ## Overview of LSEG SDC [Youtube](https://www.youtube.com/watch?v=U1qXURAAHKE)
