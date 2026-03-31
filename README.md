@@ -126,9 +126,9 @@ Alternatively, `MorningStar` also provides information from bond mutual fund. In
 
 ## Overview of LSEG SDC [Youtube](https://www.youtube.com/watch?v=U1qXURAAHKE)
 
-Although it is provided in WRDS, many institutions do not have enough budget for it (including mine). Alternatively, you can download it from SEC platform on LSEG Workspace ( ... maybe need subscription). SDC provides databases including M&A, Bonds Issuance, (syndicated) Loans and IPO, which are popular in Academia. The information is almost the same as ones In `search` section but SDC provides more detailed records.
+While SDC data is accessible through WRDS, many institutions — including mine — lack the budget for a subscription. An alternative is to download it directly from the SEC platform on LSEG Workspace, though this may also require a separate subscription. The data coverage is largely equivalent to what is available through the `Search` section on LSEG Workspace.
 
-**Notice**: Loan Dealscan Database on WRDS can connect with LSEG directly via `PermID` code and I notice that many researchers ignore this fact. 
+> **Note:** The Loan DealScan database on WRDS can be linked directly to LSEG data via the `PermID` identifier — a connection that is frequently overlooked in the literature.
 
 ## Overview of LSEG Bond/Trace [Database](https://huggingface.co/datasets/JunHe-S/LSEG/tree/main)
 
