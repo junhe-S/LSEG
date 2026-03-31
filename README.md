@@ -37,6 +37,7 @@ Since we have collected `OAPermID` or `RIC` for each listed and delisted compani
 
 ```python
 import lseg.data as ld 
+ld.open_session()
 fields = ['TR.FundPortfolioName','TR.FundInvestorType','TR.FdAdjPctOfShrsOutHeld',
           'TR.FundAdjShrsHeld','TR.FdAdjSharesHeldValue','TR.FundHoldingsDate']
  
@@ -56,6 +57,25 @@ own
 **Between 1900 and 2024, the dataset encompasses 943,096 funds across a broad range of investment vehicles.** The vast majority are Mutual Funds, which account for 750,218 entries, followed by Insurance Funds at 60,677 and Pension Funds at 50,877. Exchange Traded Funds (ETFs) number 43,249, while Hedge Funds make up 20,662 of the total. 
 
 ![image2](./assets/image3.png)
+
+Here is instruction how to download data from database in `Huggingface`:
+
+```python
+import duckdb
+from huggingface_hub import hf_hub_download
+
+# Download to local cache (only first time)
+# Save to a specific folder instead of default cache
+path = hf_hub_download(
+    repo_id="junhe-S/LSEG",
+    filename="lipper_fund.parquet",
+    repo_type="dataset",
+    local_dir="./data"          # saves to ./data/companies.parquet
+)
+# Query with DuckDB
+con = duckdb.connect()
+df = con.execute(f"SELECT * FROM parquet_scan('{path}') LIMIT 10").df()
+```
 
 However, lipper funds are available from **December-2006** and funds report in different frequency. 
 
