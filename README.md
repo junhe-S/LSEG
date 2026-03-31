@@ -102,6 +102,8 @@ df = con.execute(f"SELECT * FROM parquet_scan('{path}') LIMIT 10").df()
 
 Meanwhile, you can refer to [Fund Details API](https://github.com/edwinhu/workflows/blob/90a7dc1f8ca7b8fbff958350201c3ed7e8dd8782/skills/lseg-data/references/fund-details.md) to get access to the detailed information of fund holdings.
 
+![avg_percent_by_category](./assets/avg_percent_by_category.png)
+
 ## Overview of LSEG EMAXX / Bond Mutual Fund [Database](https://huggingface.co/datasets/JunHe-S/LSEG/tree/main)
 
 Since many institutions have no budget for `emaxx` database,  Lipper Fund is a good alternative database as it provides info of `bonds` held by these institutions. Although LESG provides snap of bond ownership, it is only front-edge data and can not be extracted from API. However, if you visit [Emaxx Columbia](https://www.columbia.edu/acis/eds/holdings/1013/www1-data.pl@C1013.html), you will find that many info before 2007 is missing if we utilite data from lipper fund only. 
