@@ -48,11 +48,9 @@ Since many institutions have no budget for `emaxx` database,  Lipper Fund is a g
 
 Alternatively, `MorningStar` also provides information from bond mutual fund. In paper, [Bond Price Fragility and the Structure of the Mutual Fund Industry](https://academic.oup.com/rfs/article/37/7/2063/7633431?login=false), they mainly use taxable fixed-income mutual funds as bond mutual fund while paper, [Bond Funds and Credit Risk](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3490683) define bond mutual funds in different way. Both papers mainly focus on a total of 1,405 funds.
 
-## Overview of LSEG SDC [Database](https://huggingface.co/datasets/JunHe-S/LSEG/tree/main)
+## Overview of LSEG SDC [Youtube](https://www.youtube.com/watch?v=U1qXURAAHKE)
 
 Although it is provided in WRDS, many institutions do not have enough budget for it (including mine). Alternatively, you can download it from SEC platform on LSEG Workspace ( ... maybe need subscription). SDC provides databases including M&A, Bonds Issuance, (syndicated) Loans and IPO, which are popular in Academia. The information is almost the same as ones In `search` section but SDC provides more detailed records.
-
-<video src="./assets/SDC_Loan.mp4"></video>
 
 **Notice**: Loan Dealscan Database on WRDS can connect with LSEG directly via `PermID` code and I notice that many researchers ignore this fact. 
 
