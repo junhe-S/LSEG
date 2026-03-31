@@ -122,6 +122,58 @@ con = duckdb.connect()
 df = con.execute(f"SELECT * FROM parquet_scan('{path}') LIMIT 10").df()
 ```
 
+Meanwhile, you can refer to [Fund Details API](https://github.com/edwinhu/workflows/blob/90a7dc1f8ca7b8fbff958350201c3ed7e8dd8782/skills/lseg-data/references/fund-details.md) via Request
+
+```
+GET /Apps/FundDetails/{version}/loadData?requests=DHOL~true~&s={LipperRIC}&lang=en-US
+```
+
+**Parameters:**
+- `requests=DHOL~true~` - Request derived holdings
+- `s` - Lipper RIC (e.g., `LP40061149`)
+- `lang` - Language code (e.g., `en-US`)
+
+### Response Structure
+
+```json
+{
+  “missingAssetIdentifiers”: null,
+  “isError”: false,
+  “errorMessage”: “”,
+  “duration”: “00:00:01.195”,
+  “results”: [{
+    “availableDates”: [
+      “2025-12-31T00:00:00”,
+      “2025-11-30T00:00:00”,
+      “2025-10-31T00:00:00”
+    ],
+    “date”: “2025-12-31T00:00:00”,
+    “groups”: [{
+      “id”: “...”,
+      “name”: “Full Holdings”,
+      “items”: [
+        {
+          “ric”: “NVDA.OQ”,
+          “name”: “NVIDIA CORP ORD”,
+          “domicile”: “UNITED STATES”,
+          “percent”: 9.045,
+          “shares”: 197497993,
+          “sharesChange”: -9570500
+        },
+        {
+          “ric”: “AAPL.OQ”,
+          “name”: “APPLE INC ORD”,
+          “domicile”: “UNITED STATES”,
+          “percent”: 8.017,
+          “shares”: 120094732,
+          “sharesChange”: -6366442
+        }
+      ]
+    }]
+  }]
+}
+```
+
 Alternatively, `MorningStar` also provides information from bond mutual fund. In paper, [Bond Price Fragility and the Structure of the Mutual Fund Industry](https://academic.oup.com/rfs/article/37/7/2063/7633431?login=false), they mainly use taxable fixed-income mutual funds as bond mutual fund while paper, [Bond Funds and Credit Risk](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3490683) define bond mutual funds in different way. Both papers mainly focus on a total of 1,405 funds.
 
 ## Overview of LSEG SDC [Youtube](https://www.youtube.com/watch?v=U1qXURAAHKE)
