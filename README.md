@@ -70,7 +70,7 @@ path = hf_hub_download(
     repo_id="junhe-S/LSEG",
     filename="lipper_fund.parquet",
     repo_type="dataset",
-    local_dir="./data"          # saves to ./data/companies.parquet
+    local_dir="./data"          # saves to ./data/lipper_fund.parquet
 )
 # Query with DuckDB
 con = duckdb.connect()
@@ -80,6 +80,25 @@ df = con.execute(f"SELECT * FROM parquet_scan('{path}') LIMIT 10").df()
 However, lipper funds are available from **December-2006** and funds report in different frequency. 
 
 ![image2](./assets/image4.png)
+
+Here is instruction how to download data from database in `Huggingface`:
+
+```python
+import duckdb
+from huggingface_hub import hf_hub_download
+
+# Download to local cache (only first time)
+# Save to a specific folder instead of default cache
+path = hf_hub_download(
+    repo_id="junhe-S/LSEG",
+    filename="lipper_fund_holdings.parquet",
+    repo_type="dataset",
+    local_dir="./data"          # saves to ./data/lipper_fund.parquet
+)
+# Query with DuckDB
+con = duckdb.connect()
+df = con.execute(f"SELECT * FROM parquet_scan('{path}') LIMIT 10").df()
+```
 
 ## Overview of LSEG EMAXX / Bond Mutual Fund [Database](https://huggingface.co/datasets/JunHe-S/LSEG/tree/main)
 
