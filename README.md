@@ -10,6 +10,25 @@ The database offers a structured overview of **27,327,868** companies available 
 
 ![image-20260329124339835](./assets/image-20260329124339835.png)
 
+Here is instruction how to download data from database in `Huggingface`:
+
+```python
+import duckdb
+from huggingface_hub import hf_hub_download
+
+# Download to local cache (only first time)
+# Save to a specific folder instead of default cache
+path = hf_hub_download(
+    repo_id="junhe-S/LSEG",
+    filename="companies.parquet",
+    repo_type="dataset",
+    local_dir="./data"          # saves to ./data/companies.parquet
+)
+# Query with DuckDB
+con = duckdb.connect()
+df = con.execute(f"SELECT * FROM parquet_scan('{path}') LIMIT 10").df()
+```
+
 The database covers **113,200** **listed and delisted** companies in LSEG, where **97,341** (**95,916**) firms have valid stock data (stock trading data). However, LSEG classification classify companys with mistakes. For example, `Alibaba Health Information Technology Ltd` is classfied as bank/financial institution.
 
 ![image2](./assets/image2.png)
