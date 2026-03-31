@@ -212,7 +212,11 @@ df = rd.get_history(
 
 Since BoardEx has known coverage gaps, I refer readers to [**How Much Do Directors Influence Firm Value? (RFS, 2019)**](https://academic.oup.com/rfs/article-abstract/33/4/1818/5522379) , in which the authors manually collect director data from SEC filings. Their hand-collected data captures value-relevant information beyond what BoardEx provides, and demonstrates that such information generates cross-stock return predictability. 
 
-Similarly, by combining the LSEG Board database with BoardEx, I find cross-stock return predictability among firms connected through shared board members — suggesting that LSEG contains incremental information not available in BoardEx alone. 
+Similarly, by combining the LSEG Board database with BoardEx, I find cross-stock return predictability among firms connected through shared board members — suggesting that LSEG contains incremental information. 
+
+**WRDS Linking Table** 
+
+Although WRDS provides Linking Table between BoardEx and LSEG, there are maning unmatched observations.
 
 
 
