@@ -100,7 +100,7 @@ con = duckdb.connect()
 df = con.execute(f"SELECT * FROM parquet_scan('{path}') LIMIT 10").df()
 ```
 
-Meanwhile, you can refer to [Fund Details API](https://github.com/edwinhu/workflows/blob/90a7dc1f8ca7b8fbff958350201c3ed7e8dd8782/skills/lseg-data/references/fund-details.md) to get access to the detailed information of fund holdings. In the follwing graph, there are `97,888` funds with bond holdings in 2024-09.
+Meanwhile, you can refer to [Fund Eikon API](https://community.developers.lseg.com/discussion/132641/how-can-i-use-api-to-authomatically-download-funds-039-holdings-informations?tab=accepted) or [Fund Details API](https://github.com/edwinhu/workflows/blob/90a7dc1f8ca7b8fbff958350201c3ed7e8dd8782/skills/lseg-data/references/fund-details.md) to get access to the detailed information of fund holdings. In the follwing graph, there are `97,888` funds with bond holdings in 2024-09.
 
 ![avg_percent_by_category](./assets/avg_percent_by_category.png)
 
